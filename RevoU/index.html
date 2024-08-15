@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator BMI</title>
+    <link rel="stylesheet" href="CSS\styles.css">
+    <script src="JS\script.js"></script>
+</head>
+<body>
+    <h1 class="title">Kalkulator BMI</h1>
+    
+    <div class="container">
+        <div class="input-section">
+            <div class="input-container">
+            <h3>Jenis kelamin</h3>
+            <input type="radio" id="pria" name="gender" value="pria" checked>
+            <label for="pria">Pria</label>
+            <input type="radio" id="wanita" name="gender" value="wanita">
+            <label for="wanita">Wanita</label>
+            
+            <h3>Berat badan</h3>
+            <input type="number" id="weight" min="1" step="0.1">
+            
+            <h3>Usia</h3>
+            <input type="number" id="age" min="1">
+            
+            <h3>Tinggi badan</h3>
+            <input type="number" id="height" min="1">
+            
+            <button onclick="calculateBMI()" class="calculate">Hitung</button>
+            <button onclick="resetForm()" class="reset">Reset</button>
+            </div>
+            
+            <h2 class="title-desc">Mengapa penting untuk mengetahui BMI?</h2>
+            <p>(Indeks Massa Tubuh) atau BMI adalah cara sederhana untuk memeriksa risiko penyakit terkait lemak tubuh Anda. Hidup dengan kelebihan berat badan atau obesitas dikaitkan dengan peningkatan risiko kematian dan penyakit atau kondisi lainnya. Umumnya, semakin tinggi BMI Anda, semakin besar risiko terkena penyakit kronis terkait obesitas lainnya.</p>
+
+            <p>Kalkulator ini akan memberi Anda gambaran tentang perbandingan berat badan Anda dengan nilai umum. Indeks Massa Tubuh (atau BMI) dihitung sebagai berat badan Anda (dalam kilogram) dibagi dengan kuadrat tinggi badan Anda (dalam meter) atau BMI = Kg/M².</p>
+
+            <h2 class="title-desc">Keterbatasan BMI</h2>
+            <p>BMI adalah pengukuran yang sederhana dan objektif, tetapi dapat menyesatkan dalam kasus tertentu dan untuk beberapa kelompok orang. Penelitian telah menunjukkan bahwa BMI kurang akurat dalam memprediksi risiko penyakit pada orang yang lebih tua, atlet, orang yang tinggi atau pendek, dan mereka yang memiliki tipe tubuh lebih berotot. Misalnya, atlet atau binaragawan memiliki lebih banyak otot dan berat badan lebih banyak, yang membuat BMI mereka lebih tinggi.</p>
+
+            <p>Penting untuk diingat bahwa hidup dengan obesitas tidak selalu berarti Anda tidak sehat, sama seperti memiliki berat badan 'normal' tidak berarti Anda sehat. BMI Anda tidak menentukan Anda, tetapi mengetahui dan memahami BMI Anda dapat menjadi alat yang ampuh untuk bertanggung jawab atas kesehatan Anda sendiri.</p>
+        </div>
+        
+        <div class="result-section">
+            <h2>Hasil</h2>
+            <div id="result" class="result-container">
+                <h3>Berat badan <span id="category"></span></h3>
+                <h1 id="bmi-result"></h1>
+                <p id="bmi-description"></p>
+                <button onclick="downloadResult()" class="download">Download hasil BMI</button>
+            </div>
+
+            <div>
+                <p><b>Disclaimer: </b>Informasi ini tidak sepenuhnya mewakili diagnosis menyeluruh dari kesehatan tubuh dan resiko penyakit seseorang. jika Anda memiliki pertanyaan mengenai kesehatan Anda, disarankan untuk menghubungi atau berkonsultasi lebih lanjut mengenai resiko dan kekhawatiran Anda terkait dengan berat badan Anda dengan tenaga profesional di bidangnya.</p>
+
+                <p>Terlepas dari BMI Anda, para profesional kesehatan merekomendasikan memiliki diet dan gaya hidup sehat. Konsultasikan dengan dokter Anda tentang berat badan dan kesehatan Anda dan evaluasi tindakan apa yang mungkin diperlukan.</p>
+            </div>
+            
+            <div class="klasifikasi">
+                <h3>Klasifikasi BMI</h3>
+                <table>
+                    <tr>
+                        <th>Klasifikasi</th>
+                        <th>BMI</th>
+                    </tr>
+                    <tr>
+                        <td>Underweigt</td>
+                        <td>di bawah 18.5</td>
+                    </tr>
+                    <tr>
+                        <td>Normal</td>
+                        <td>18.5 - 24.9</td>
+                    </tr>
+                    <tr>
+                        <td>Overweight</td>
+                        <td>25.0 - 29.9</td>
+                    </tr>
+                    <tr>
+                        <td>Obesitas</td>
+                        <td>30 ke atas</td>
+                    </tr>
+                    <tr>
+                        <td>Kelas I</td>
+                        <td>30.0 - 34.9</td>
+                    </tr>
+                    <tr>
+                        <td>Kelas II</td>
+                        <td>35.0 - 39.9</td>
+                    </tr>
+                    <tr>
+                        <td>Kelas III</td>
+                        <td>40 ke atas</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <button onclick="consultNutrition()" class="consult">Konsultasi ahli gizi via aplikasi</button>
+            <button onclick="registerOnline()" class="regist">Registrasi online ahli gizi</button>
+            
+            <h3>Download Aplikasi</h3>
+            <img src="Asset\googleplay.png" alt="Google Play" class="gplay">
+            <img src="Asset\appstore.png" alt="App Store" class="appstore">
+        </div>
+    </div>
+</body>
+
+<footer>
+    <div class="footer">
+        &copy;Maoulana Ahmad Mahesa
+    </div>
+</footer>
